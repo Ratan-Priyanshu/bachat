@@ -31,11 +31,12 @@ model Account {
 }
 
 model Transactions {
-  id     String          @id @default(uuid())
-  amount Int
-  type   TransactionType
-  userId String
-  user   User            @relation(fields: [userId], references: [id])
+  id       String          @id @default(uuid())
+  amount   Int
+  type     TransactionType
+  category String
+  userId   String
+  user     User            @relation(fields: [userId], references: [id])
 }
 
 enum TransactionType {
